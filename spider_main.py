@@ -22,8 +22,8 @@ class SpiderMain:
           break
         count+=1
         
-      except:
-        print('失败')
+      except Exception as e:
+        print(str(e))
       
     self.outputer.output_html()
 
