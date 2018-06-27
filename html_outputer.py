@@ -8,8 +8,12 @@ class HtmlOutputer(object):
     self.datas.append(data)
 
   def output_html(self):
-    fout = open('output.txt', 'w')
+    fout = open('output.txt', 'w', encoding='utf-8')
     for data in self.datas:
-      fout.write(data['url'] + " " + data['title'] + " " + data['summary'] + "\n")
+      str = data['url'] + data['title'] + data['summary']
+      fout.write(str)
+      """ fout.write(data['url'])
+      fout.write(data['title'].encode('utf-8'))
+      fout.write(data['summary'].encode('utf-8')) """
     
     fout.close()

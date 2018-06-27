@@ -17,6 +17,7 @@ class UrlManger(object):
       
   def has_new_url(self):
     return len(self.new_urls) != 0
+    
 
   def get_new_url(self):
     new_url = self.new_urls.pop()

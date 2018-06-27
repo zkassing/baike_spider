@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
-
 import re
+
 class HtmlParser(object):
   
   def _get_new_urls(self, page_url, soup):

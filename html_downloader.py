@@ -5,7 +5,7 @@ class HtmlDownloader(object):
       return None
     
     response = request.urlopen(url)
-    if response.getCode() != 200:
+    if response.getcode() != 200:
       return None
     return response.read()
     
