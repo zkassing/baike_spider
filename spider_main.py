@@ -5,7 +5,7 @@ class SpiderMain:
     self.downloader = html_downloader.HtmlDownloader()
     self.parser = html_parser.HtmlParser()
     self.outputer = html_outputer.HtmlOutputer()
-
+    
   def craw(self, root_url):
     count = 1
     self.urls.add_new_url(root_url)
@@ -16,7 +16,7 @@ class SpiderMain:
         new_urls, new_data = self.parser.parse(new_url, html_cont)
         self.urls.add_new_urls(new_urls)
         self.outputer.collect_data(new_data)
-        if count == 1000:
+        if count == 10:
           break
       except:
         print('失败')

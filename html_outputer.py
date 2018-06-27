@@ -1,6 +1,15 @@
 class HtmlOutputer(object):
-  def collect_data(self):
-    pass
+  def __init__(self): 
+    self.datas = []
+
+  def collect_data(self, data):
+    if data is None:
+      return 
+    self.datas.append(data)
 
   def output_html(self):
-    pass
+    fout = open('output.txt', 'w')
+    for data in self.datas:
+      fout.write(data['url'] + " " + data['title'] + " " + data['summary'] + "\n")
+    
+    fout.close()
